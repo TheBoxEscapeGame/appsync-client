@@ -1,0 +1,35 @@
+{
+  "name": "appsync-client",
+  "version": "0.0.1",
+  "description": "AWS AppSync client",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "/dist"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TheBoxEscapeGame/appsync-client.git"
+  },
+  "keywords": [
+    "appsync",
+    "graphql"
+  ],
+  "author": "Philippe Muller",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TheBoxEscapeGame/appsync-client/issues"
+  },
+  "homepage": "https://github.com/TheBoxEscapeGame/appsync-client#readme",
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^4.18.0",
+    "@typescript-eslint/parser": "^4.18.0",
+    "eslint": "^7.22.0",
+    "prettier": "^2.2.1",
+    "typescript": "^4.2.3"
+  },
+  "dependencies": {}
+}
