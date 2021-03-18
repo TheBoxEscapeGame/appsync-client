@@ -1,1 +1,4 @@
-export {create} from './client';
+export {
+  create,
+  fromAwsEnvironmentVariables as createFromAwsEnvironmentVariables,
+} from "./client";
