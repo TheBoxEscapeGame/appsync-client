@@ -4,7 +4,7 @@ export declare function create({ uri, region, auth, fetch, cache, }: {
     uri: string;
     region: string;
     auth: AuthOptions;
-    fetch?: (input: RequestInfo, init?: RequestInit | undefined) => Promise<Response>;
+    fetch?: any;
     cache?: any;
 }): ApolloClient<InMemoryCache>;
 export declare function fromAwsEnvironmentVariables({ uri, region, fetch, cache, }: {
