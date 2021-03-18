@@ -35,10 +35,7 @@ export function fromAwsEnvironmentVariables({
 }: {
   uri: string;
   region: string;
-  fetch?: (
-    input: RequestInfo,
-    init?: RequestInit | undefined
-  ) => Promise<Response>;
+  fetch?: any
   cache?: any;
 }): ApolloClient<InMemoryCache> {
   return create({
