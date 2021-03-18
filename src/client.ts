@@ -18,10 +18,7 @@ export function create({
   uri: string;
   region: string;
   auth: AuthOptions;
-  fetch?: (
-    input: RequestInfo,
-    init?: RequestInit | undefined
-  ) => Promise<Response>;
+  fetch?: any;
   cache?: any;
 }): ApolloClient<InMemoryCache> {
   const authLink = new AuthLink({ region, auth, url: uri });
