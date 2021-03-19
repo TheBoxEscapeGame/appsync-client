@@ -1,9 +1,11 @@
+import crossFetch from "cross-fetch";
 import {
   ApolloClient,
   ApolloLink,
   createHttpLink,
   InMemoryCache,
 } from "@apollo/client/core";
+
 import { AuthLink } from "./authLink";
 import { AuthOptions } from "./types";
 import * as options from "./auth/options";
@@ -12,7 +14,7 @@ export function create({
   uri,
   region,
   auth,
-  fetch,
+  fetch = crossFetch,
   cache = new InMemoryCache(),
 }: {
   uri: string;
@@ -30,12 +32,12 @@ export function create({
 export function fromAwsEnvironmentVariables({
   uri,
   region,
-  fetch,
+  fetch = crossFetch,
   cache = new InMemoryCache(),
 }: {
   uri: string;
   region: string;
-  fetch?: any
+  fetch?: any;
   cache?: any;
 }): ApolloClient<InMemoryCache> {
   return create({
