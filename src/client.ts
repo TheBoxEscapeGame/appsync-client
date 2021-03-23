@@ -16,17 +16,19 @@ export function create({
   auth,
   fetch = crossFetch,
   cache = new InMemoryCache(),
+  connectToDevTools = false,
 }: {
   uri: string;
   region: string;
   auth: AuthOptions;
   fetch?: any;
   cache?: any;
+  connectToDevTools?: boolean;
 }): ApolloClient<InMemoryCache> {
   const authLink = new AuthLink({ region, auth, url: uri });
   const httpLink = createHttpLink({ uri, fetch });
   const link = ApolloLink.from([authLink, httpLink]);
-  return new ApolloClient({ link, cache });
+  return new ApolloClient({ link, cache, connectToDevTools });
 }
 
 export function fromAwsEnvironmentVariables({
