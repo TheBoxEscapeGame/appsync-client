@@ -27,11 +27,11 @@ const cross_fetch_1 = __importDefault(require("cross-fetch"));
 const core_1 = require("@apollo/client/core");
 const authLink_1 = require("./authLink");
 const options = __importStar(require("./auth/options"));
-function create({ uri, region, auth, fetch = cross_fetch_1.default, cache = new core_1.InMemoryCache(), }) {
+function create({ uri, region, auth, fetch = cross_fetch_1.default, cache = new core_1.InMemoryCache(), connectToDevTools = false, }) {
     const authLink = new authLink_1.AuthLink({ region, auth, url: uri });
     const httpLink = core_1.createHttpLink({ uri, fetch });
     const link = core_1.ApolloLink.from([authLink, httpLink]);
-    return new core_1.ApolloClient({ link, cache });
+    return new core_1.ApolloClient({ link, cache, connectToDevTools });
 }
 exports.create = create;
 function fromAwsEnvironmentVariables({ uri, region, fetch = cross_fetch_1.default, cache = new core_1.InMemoryCache(), }) {
